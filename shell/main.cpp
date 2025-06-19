@@ -95,6 +95,10 @@ public:
 
 int main(int argc, char *argv[])
 {
+    QSurfaceFormat format;
+    format.setRenderableType(QSurfaceFormat::OpenGLES);
+    QSurfaceFormat::setDefaultFormat(format);
+
     setenv("DSG_APP_ID", "org.deepin.dde.shell", 0);
     DGuiApplicationHelper::setAttribute(DGuiApplicationHelper::UseInactiveColorGroup, false);
     DApplication a(argc, argv);
